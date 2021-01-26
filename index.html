@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSChang</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="color.js"></script>
+    </head>
+    <body>
+        <h1><a href="index.html">JSChang</a></h1>
+        <input type="button" id="night_day" value="Night" onclick="nightDayHandler(this)">
+        <div id="grid">
+            <ol>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="publication.html">Publication</a></li>
+                <li><a href="awards.html">Awards</a></li>
+            </ol>
+            <div id="article">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/wELzF4JlrSo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe><br>
+                Hello <strong>World</strong> My name is <u>JSChang</u>
+                <div id="disqus_thread"></div>
+                <script>
+                    /**s
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://https-jschang0215-github-io.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+        </div>
+    </body>
+</html>
+
