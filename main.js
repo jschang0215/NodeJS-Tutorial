@@ -45,7 +45,7 @@ var app = http.createServer(function(request,response){
                     <a href="/update?id=${sanitizedTitle}">Update</a>
                     <form action="/delete_process" method="post" onclick="alert('Do you really want to delete?')">
                     <input type="hidden" name="id" value="${sanitizedTitle}">
-                    <input type="submit" value="Delete">
+                    <input type="submit" class="button"  value="Delete">
                     </form>
                     `);
                     response.writeHead(200);
@@ -63,7 +63,7 @@ var app = http.createServer(function(request,response){
                 <form action="/create_process" method="post">
                     <p><input type="text" name="title" placeholder="title"></p>
                     <p><textarea name="description" placeholder="description"></textarea></p>
-                    <p><input type="submit"></p>
+                    <p><input type="submit" class="button"></p>
                 </form>
             </ul>
             `, ` `);

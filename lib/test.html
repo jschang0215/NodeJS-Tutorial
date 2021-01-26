@@ -1,7 +1,4 @@
-module.exports = {
-    HTML: function (title, list, body, control) {
-        return `
-        <!DOCTYPE html>
+<!DOCTYPE html>
         <html>
             <head>
                 <title>JSChang - ${title}</title>
@@ -26,14 +23,14 @@ module.exports = {
                 }
                 #grid ol {
                     border-right: 1px solid gray;
-                    width: 100px;
+                    width: 150px;
                     margin: 0px;
                     padding: 10px;
                     padding-left: 30px;
                 }
                 #grid {
                     display: grid;
-                    grid-template-columns: 150px 1fr;
+                    grid-template-columns: 200px 1fr;
                 }
                 #article {
                     padding: 10px;
@@ -45,7 +42,7 @@ module.exports = {
                 }
                 #grid ul {
                     margin: 0px;
-                    padding-left: 30px;
+                    padding-left: 20px;
                 }
                 a {
                     color:black;
@@ -108,32 +105,27 @@ module.exports = {
                 </script>
             </head>
             <body>
-                <h1><a href="/">JSChang</a></h1>
+                <h1><a href="index.html">JSChang</a></h1>
                 <input type="button" class="button" id="night_day" value="Night" onclick="nightDayHandler(this)">
                 <div id="grid">
-                    ${list}
+                    <ol>
+                        <li><a href="education.html" class="saw">Education</a></li>
+                        <li><a href="publication.html" id="cur">Publication</a></li>
+                        <li><a href="awards.html"class="saw">Awards</a></li>
+                    </ol>
                     <div id="article">
-                    ${control}
-                    <br><br>
-                    ${body}
+
+                        <a href="/update">Update</a>
+                        <form action="/delete_process" method="post" onclick="alert('Do you really want to delete?')">
+                            <input type="hidden" name="id" value="${sanitizedTitle}">
+                            <input type="submit" class="button" value="Delete">
+                        </form>
+                        <br>
+                        <h3>Publication</h3>
+                        <ul>
+                            <li>Efficient Hyperplane Generation</li>
+                        </ul>
                     </div>
-                </div>
+                </div> 
             </body>
         </html>
-        `
-    },
-    list: function (filelist, title) {
-        var list = '<ol>'
-        for(var i=0; i<filelist.length; i++) {
-            if(!filelist[i].startsWith(".")) {
-                if(filelist[i] === title) {
-                    list += `<li><a href="/?id=${filelist[i]}" class="cur">${filelist[i]}</a></li>`;
-                } else {
-                    list += `<li><a href="/?id=${filelist[i]}" class="saw">${filelist[i]}</a></li>`;
-                }
-            }
-        }
-        list +='</ol>'
-        return list;
-    }
-};
